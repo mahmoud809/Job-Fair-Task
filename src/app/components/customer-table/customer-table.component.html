@@ -1,0 +1,30 @@
+<section  class="min-vh-100 text-center h-100 pb-5">
+  <h2 class="mb-5 py-3">Customer Data</h2>
+  <div class="row g-5">
+    <input type="search" class="form-control mx-auto w-50 my-2" placeholder="Filter.." [(ngModel)]="searchTerm">
+    <div class="table-responsive mt-4 py-4 shadow d-flex justify-content-between">
+      <table class="table table-light table-hover text-center">
+        <thead>
+          <tr>
+            <th scope="col">Customer ID</th>
+            <th scope="col">Customer Name</th>
+            <th scope="col">Transaction ID</th>
+            <th scope="col">Transaction Customer ID</th>
+            <th scope="col">Date</th>
+            <th scope="col">Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of combinedData | filter: searchTerm" role="button" [routerLink]="['/graph', data.customer?.id]">
+            <td>{{data.customer?.id}}</td>
+            <td class="text-primary">{{data.customer?.name}}</td>
+            <td>{{data.transaction.id}}</td>
+            <td>{{data.transaction.customer_id}}</td>
+            <td>{{data.transaction.date}}</td>
+            <td>{{data.transaction.amount}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

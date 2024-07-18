@@ -1,0 +1,15 @@
+section{
+    background-color: #ffffff;
+}
+section .line{
+    width: 5rem;
+    height: .25rem;
+    margin-inline: 13px;
+}
+.contact-title{
+
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    right: 90%;
+}
